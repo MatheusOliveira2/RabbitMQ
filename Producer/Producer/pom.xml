@@ -8,7 +8,7 @@
 		<version>2.5.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example.rabbitMQ</groupId>
+	<groupId>com.example.RabbitMQ</groupId>
 	<artifactId>Producer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Producer</name>

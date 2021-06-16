@@ -1,4 +1,4 @@
-package com.example.rabbitMQ.Producer;
+package com.example.RabbitMQ.Producer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
