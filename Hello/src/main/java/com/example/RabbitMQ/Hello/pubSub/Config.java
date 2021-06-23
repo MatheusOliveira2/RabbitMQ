@@ -28,14 +28,12 @@ public class Config {
         }
 
         @Bean
-        public Binding binding1(FanoutExchange fanout,
-                                Queue autoDeleteQueue1) {
+        public Binding binding1(FanoutExchange fanout, Queue autoDeleteQueue1) {
             return BindingBuilder.bind(autoDeleteQueue1).to(fanout);
         }
 
         @Bean
-        public Binding binding2(FanoutExchange fanout,
-                                Queue autoDeleteQueue2) {
+        public Binding binding2(FanoutExchange fanout, Queue autoDeleteQueue2) {
             return BindingBuilder.bind(autoDeleteQueue2).to(fanout);
         }
 
