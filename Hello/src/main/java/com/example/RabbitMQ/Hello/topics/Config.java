@@ -1,10 +1,11 @@
 package com.example.RabbitMQ.Hello.topics;
+
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-@Profile({"tut5","topics"})
+@Profile({"tut5", "topics"})
 @Configuration
 public class Config {
 
@@ -32,6 +33,11 @@ public class Config {
         }
 
         @Bean
+        public Queue autoDeleteQueue3() {
+            return new AnonymousQueue();
+        }
+
+        @Bean
         public Binding binding1a(TopicExchange topic,
                                  Queue autoDeleteQueue1) {
             return BindingBuilder.bind(autoDeleteQueue1)
@@ -53,6 +59,14 @@ public class Config {
             return BindingBuilder.bind(autoDeleteQueue2)
                     .to(topic)
                     .with("lazy.#");
+        }
+
+        @Bean
+        public Binding binding1c(TopicExchange topic,
+                                 Queue autoDeleteQueue3) {
+            return BindingBuilder.bind(autoDeleteQueue3)
+                    .to(topic)
+                    .with("lazy.orange.*");
         }
 
     }
